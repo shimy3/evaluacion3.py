@@ -1,5 +1,5 @@
 import hotel
-from datetime import date
+from datetime import datetime
 
 hotel = [
     [[], [], [], [], [], [], ],
@@ -91,12 +91,11 @@ while True:
         case (3): # 3. ver estado de la habitacion. 
             ver_estado(hotel)
         case (4): # 4. Ver ventas diarias
-            ventas_diarias
-            print("las ventas diarias son ", ventas_diarias)
-            
-            print("")
-        case (5): # 5. Guardar 
-            guardar_reserva
+            hotel.ventas_diarias()
+        case (5): # 5. Guardar
+            hotel = input("Ingrese el nombre del archivo donde desea guardar la información (sin extensión): ")
+            hotel.guardar_informacion(hotel  + ".csv")
+            print(f"Información guardada en {hotel}.csv")
         case (6):
             print("usted ha salido")
             break    
